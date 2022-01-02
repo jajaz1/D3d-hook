@@ -1,5 +1,4 @@
 #include "includes.h"
-//https://guidedhacking.com/threads/ezp1z1s-csgo-direct3d9-hooking-esp-tutorial-series.14570/
 
 // window height and width
 int windowHeight, windowWidth;
