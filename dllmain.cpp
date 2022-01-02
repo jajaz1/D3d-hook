@@ -1,8 +1,5 @@
 #include "includes.h"
 
-// credits to:
-// Broihon and 0xDEC0DE for the dummy device template
-//https://guidedhacking.com/threads/ezp1z1s-csgo-direct3d9-hooking-esp-tutorial-series.14570/
 
 // data
 void* d3d9Device[119];
