@@ -1,8 +1,7 @@
 #include "includes.h"
 
-// hooking functions by rake and solair
 
-// patch bytes function
+
 void Patch(BYTE* dst, BYTE* src, unsigned int size) {
 	DWORD oProc;
 	VirtualProtect(dst, size, PAGE_EXECUTE_READWRITE, &oProc);
@@ -10,7 +9,6 @@ void Patch(BYTE* dst, BYTE* src, unsigned int size) {
 	VirtualProtect(dst, size, oProc, &oProc);
 }
 
-// hook function
 bool Hook(char* src, char* dst, int len) {
 	if (len < 5) return false;
 	DWORD oProc;
@@ -22,7 +20,6 @@ bool Hook(char* src, char* dst, int len) {
 	VirtualProtect(src, len, oProc, &oProc);
 }
 
-// trampoline hook function
 char* TrampHook(char* src, char* dst, unsigned int len) {
 	if (len < 5) return 0;
 	char* gateway = (char*)VirtualAlloc(0, len + 5, MEM_COMMIT | MEM_RESERVE, PAGE_EXECUTE_READWRITE);
